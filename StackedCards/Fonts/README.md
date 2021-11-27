@@ -1,26 +1,31 @@
-# SwiftUI.StackedCards
+# UIFont.familyNames 
 
-This app creates a stack of cards, each showing a placemark with a different background color.
+```Swift
+struct ContentView: View {
+    var body: some View {
+        ScrollView {
+            ForEach(UIFont.familyNames, id: \.self) { name in
+                HStack {
+                    Text("Hello World")
+                        .font(Font(UIFont(name: name, size: 20)!))
+                    Spacer()
+                    Text(name)
+                }
+                .font(.caption)
+                .padding(.vertical, 5)
+                .padding(.horizontal)
+            }
+        }
+    }
+}
+```
 
-![image](https://user-images.githubusercontent.com/15805568/143660668-485d7d98-c576-40cf-9b59-dc860e1812fb.png)
+![image](https://user-images.githubusercontent.com/15805568/143661951-97fd915a-9bc4-48f0-9ceb-63c50096ff07.png)
 
-Tapping the first card will show the description of the placemark.
+![image](https://user-images.githubusercontent.com/15805568/143661968-8b84d3c2-4819-4ecc-a055-57c2a63cba07.png)
 
-![image](https://user-images.githubusercontent.com/15805568/143660747-21a74a03-c6a7-4bcd-8d0b-f5bfe2764a03.png)
+![image](https://user-images.githubusercontent.com/15805568/143661982-7f1bedc0-ef21-4067-a4cd-02c8d28c495d.png)
 
-Swipping the first card to the left will show the next card.
+![image](https://user-images.githubusercontent.com/15805568/143661992-3f3e9dac-3cd1-4108-9431-eae535f5f6a8.png)
 
-![image](https://user-images.githubusercontent.com/15805568/143660705-33111bbb-201e-420d-9f1f-96cfc8a8fb0c.png)
-
-Tapping the gear icon will show the Settings screen.
-
-![image](https://user-images.githubusercontent.com/15805568/143660780-4726e558-8ce3-42b3-96f5-24c0c4df9b14.png)
-
-The following shows the cards when it is set to 1 and set to "Show All Cards". The code calculates the space between the cards automatically.
-
-![image](https://user-images.githubusercontent.com/15805568/143660944-bf9b3034-807c-4be9-9580-68fe4e6209a0.png)
-![image](https://user-images.githubusercontent.com/15805568/143660978-5c66330f-8f4d-4113-addd-e2dbf18de8ff.png)
-
-The repeat flag specifies whether the first card is moved away or to the end of the cards. The following shows the repeat flag is set to false and all the cards are moved away.
-
-![image](https://user-images.githubusercontent.com/15805568/143660911-2809f106-5efa-4162-ad33-c84bea577128.png)
+![image](https://user-images.githubusercontent.com/15805568/143662004-2a48df0b-c5b9-43ce-8a48-9dd947d843a0.png)
